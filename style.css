@@ -1,0 +1,310 @@
+/* --- VARIABLES Y RESET --- */
+:root {
+    --azul-oscuro: #0A1C3E;
+    --azul-claro: #1E3A8A;
+    --dorado: #C5A059;
+    --gris-fondo: #F8F9FA;
+    --blanco: #FFFFFF;
+    --texto-gris: #4B5563;
+    --fuente: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--fuente);
+    background-color: var(--gris-fondo);
+    color: var(--texto-gris);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll horizontal por el desvanecido */
+}
+
+/* --- HEADER --- */
+.header {
+    background-color: var(--blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo { 
+    width: 70px; 
+    height: auto; 
+    border-radius: 50%; /* Hace la imagen redondita si es cuadrada */
+    object-fit: cover;
+}
+
+.logo-text h1 {
+    font-size: 1rem;
+    color: var(--azul-oscuro);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.logo-text span {
+    font-size: 1.2rem;
+    color: var(--azul-claro);
+    font-weight: 600;
+}
+
+/* --- NAVEGACIÓN --- */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--azul-oscuro);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover { color: var(--dorado); }
+
+.btn-nav {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco) !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: var(--azul-oscuro);
+    cursor: pointer;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    padding: 80px 5%;
+    background: linear-gradient(135deg, var(--blanco) 0%, var(--gris-fondo) 100%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hero-text { flex: 1.2; z-index: 2; }
+
+.hero-title {
+    color: var(--azul-oscuro);
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--azul-claro);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.hero-features {
+    background: var(--blanco);
+    padding: 25px;
+    border-left: 6px solid var(--dorado);
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.hero-features h3 {
+    color: var(--azul-oscuro);
+    margin-bottom: 10px;
+}
+
+/* --- AQUI ESTA EL TRUCO DE LA IMAGEN DESVANECIDA --- */
+.hero-image { 
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.hero-image img {
+    width: 130%; /* Hacemos la imagen un poco más grande */
+    max-width: 800px;
+    height: auto;
+    border-radius: 12px;
+    
+    /* Efecto espejo/desvanecido para que se fusione con el fondo */
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    
+    /* Mueve la imagen un poco a la derecha para que encaje */
+    margin-right: -10%; 
+}
+
+/* --- BOTONES --- */
+.hero-buttons { display: flex; gap: 15px; }
+
+.btn-primary, .btn-secondary {
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border: 2px solid var(--azul-oscuro);
+}
+
+.btn-primary:hover {
+    background-color: var(--azul-claro);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--azul-oscuro);
+    border: 2px solid var(--azul-oscuro);
+}
+
+.btn-secondary:hover {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    transform: translateY(-2px);
+}
+
+/* --- SECCIONES GENERALES --- */
+section { padding: 80px 5%; }
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--azul-oscuro);
+    margin-bottom: 40px;
+    font-weight: 800;
+}
+
+/* --- NOSOTROS --- */
+.about { background-color: var(--blanco); text-align: center; }
+.about .section-content { max-width: 800px; margin: 0 auto; font-size: 1.1rem; }
+
+/* --- SERVICIOS --- */
+.services { background-color: var(--gris-fondo); }
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: var(--blanco);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border-top: 4px solid var(--azul-claro);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.service-card h3 { color: var(--azul-oscuro); margin-bottom: 15px; }
+
+/* --- FORMULARIO --- */
+.contact-section { background-color: var(--blanco); text-align: center; }
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+#contact-form input {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: var(--fuente);
+}
+
+/* --- FOOTER --- */
+.footer { background-color: var(--azul-oscuro); color: var(--blanco); padding-top: 60px; }
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5% 40px;
+}
+
+.footer-contact h4 { margin-bottom: 15px; color: var(--dorado); }
+.footer-bottom { background-color: #061126; text-align: center; padding: 20px; font-size: 0.9rem; }
+
+/* =========================================
+   MEDIA QUERIES (CELULARES)
+   ========================================= */
+@media (max-width: 768px) {
+    .header { flex-wrap: wrap; }
+    .menu-toggle { display: block; }
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--blanco);
+        margin-top: 15px;
+        padding: 20px 0;
+    }
+    .nav-menu.active { display: flex; }
+
+    .hero-content { flex-direction: column-reverse; text-align: center; }
+    .hero-title { font-size: 2.2rem; }
+    
+    /* En celular quitamos el desvanecido para que la foto se vea completa */
+    .hero-image img {
+        width: 100%;
+        margin-right: 0;
+        -webkit-mask-image: none;
+        mask-image: none;
+        border-radius: 12px;
+    }
+    
+    .hero-buttons { flex-direction: column; }
+    .footer-content { flex-direction: column; text-align: center; }
+}

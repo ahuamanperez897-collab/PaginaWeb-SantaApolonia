@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Conciliación Extrajudicial "Santa Apolonia"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="header">
+        <div class="logo-container">
+            <!-- Ruta EXACTA a tu imagen del logo -->
+            <img src="imagenes/logo.jpg" alt="Escudo Santa Apolonia" class="logo">
+            <div class="logo-text">
+                <h1>Centro Conciliación Extrajudicial</h1>
+                <span>"Santa Apolonia"</span>
+            </div>
+        </div>
+        
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+
+        <nav class="nav-menu" id="nav-menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Sobre Nosotros</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto" class="btn-nav">Contáctanos</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCIÓN PRINCIPAL (HERO) -->
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">¿Por qué demandar si puedes pactar?</h2>
+                    <p class="hero-subtitle">Soluciones legales rápidas, eficientes y definitivas.</p>
+                    
+                    <div class="hero-features">
+                        <h3>Resolvemos tus conflictos con confianza</h3>
+                        <p>Especialistas en conciliación en materia de familia, civil y controversias con el Estado.</p>
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <a href="#contacto" class="btn-primary">Consulta Ahora</a>
+                        <a href="#servicios" class="btn-secondary">Ver Servicios</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Ruta EXACTA a tu imagen de fondo -->
+                    <img src="imagenes/fondo.jpg" alt="Abogados estrechando la mano">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN NOSOTROS -->
+        <section class="about" id="nosotros">
+            <div class="section-content">
+                <h2 class="section-title">Sobre Nosotros</h2>
+                <p>En el Centro de Conciliación "Santa Apolonia", creemos firmemente que el diálogo es la mejor herramienta para resolver conflictos. Nuestro equipo de profesionales altamente capacitados te guiará en el proceso, garantizando un entorno seguro, confidencial y legal.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SERVICIOS -->
+        <section class="services" id="servicios">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Derecho de Familia</h3>
+                    <p>Pensiones de alimentos, tenencia, régimen de visitas y división de bienes.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Materia Civil</h3>
+                    <p>Conflictos contractuales, deudas, arrendamientos y problemas vecinales.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Controversias con el Estado</h3>
+                    <p>Problemas administrativos, multas y trámites con entidades públicas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE CONTACTO -->
+        <section class="contact-section" id="contacto">
+            <h2 class="section-title">Contáctanos</h2>
+            <p>Déjanos tus datos y un especialista se comunicará contigo.</p>
+            <form id="contact-form">
+                <input type="text" id="nombre" placeholder="Tu Nombre Completo" required>
+                <input type="email" id="correo" placeholder="Tu Correo Electrónico" required>
+                <button type="submit" class="btn-primary">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA (FOOTER) -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Centro de Conciliación "Santa Apolonia"</h3>
+                <p>Comprometidos con la resolución pacífica de conflictos.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p>📍 Av. Principal 123, Lima</p>
+                <p>📞 +51 987 654 321</p>
+                <p>✉️ contacto@santaapolonia.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Centro de Conciliación Santa Apolonia. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
